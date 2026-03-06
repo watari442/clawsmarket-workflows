@@ -1,0 +1,44 @@
+{
+  "type": "object",
+  "properties": {
+    "sentry_org": {
+      "type": "string",
+      "description": "Sentry organization slug"
+    },
+    "sentry_project": {
+      "type": "string",
+      "description": "Sentry project slug"
+    },
+    "sentry_api_base": {
+      "type": "string",
+      "description": "Sentry API base URL",
+      "default": "https://sentry.io/api/0"
+    },
+    "github_repo": {
+      "type": "string",
+      "description": "GitHub repo in owner/repo format"
+    },
+    "github_base_branch": {
+      "type": "string",
+      "description": "Base branch for PRs",
+      "default": "main"
+    },
+    "min_confidence": {
+      "type": "string",
+      "enum": ["high", "medium", "low"],
+      "description": "Minimum confidence to create a PR",
+      "default": "medium"
+    },
+    "auto_analyze": {
+      "type": "boolean",
+      "description": "Automatically analyze new issues (still requires approval for PRs)",
+      "default": false
+    },
+    "poll_limit": {
+      "type": "integer",
+      "description": "Max issues to fetch per poll",
+      "default": 25
+    }
+  },
+  "required": ["sentry_org", "sentry_project", "github_repo"]
+}

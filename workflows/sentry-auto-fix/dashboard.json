@@ -1,0 +1,9 @@
+{
+  "tabs": [
+    {"name": "Overview", "description": "Issue counts, fix rates, PR stats"},
+    {"name": "Issues", "description": "All Sentry issues with status and severity"},
+    {"name": "Fixes", "description": "Generated fixes with confidence levels"},
+    {"name": "PRs", "description": "Pull requests created from fixes"}
+  ],
+  "statuses": ["open", "analyzing", "fixed", "pr_created", "skipped", "resolved"]
+}
