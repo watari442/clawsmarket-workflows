@@ -1,0 +1,32 @@
+{
+  "workflow": "ai-sdr",
+  "tool_slots": {
+    "lead_source": {
+      "options": ["apollo"],
+      "default": "apollo",
+      "mcp_server": "apollo",
+      "env_keys": ["APOLLO_API_KEY"],
+      "description": "Lead discovery and enrichment platform"
+    },
+    "email_verifier": {
+      "options": ["reoon"],
+      "default": "reoon",
+      "mcp_server": "reoon",
+      "env_keys": ["REOON_API_KEY"],
+      "description": "Email deliverability verification"
+    },
+    "email_sender": {
+      "options": ["instantly"],
+      "default": "instantly",
+      "mcp_server": "instantly",
+      "env_keys": ["INSTANTLY_API_KEY"],
+      "description": "Email campaign sending platform"
+    }
+  },
+  "approval_config": {
+    "activate_campaign": {
+      "requires_approval": true,
+      "description": "Starting email sends is irreversible"
+    }
+  }
+}

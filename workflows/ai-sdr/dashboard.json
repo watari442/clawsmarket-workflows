@@ -1,0 +1,26 @@
+{
+  "workflow": "ai-sdr",
+  "tabs": [
+    {
+      "name": "Pipeline",
+      "widgets": [
+        {"type": "stat_cards", "metrics": ["leads_found", "emails_drafted", "emails_sent", "replies", "meetings"]},
+        {"type": "table", "source": "sdr_leads", "columns": ["name", "company", "title", "score", "stage", "updated_at"]},
+        {"type": "funnel", "stages": ["new", "qualified", "contacted", "replied", "meeting", "closed"]}
+      ]
+    },
+    {
+      "name": "Emails",
+      "widgets": [
+        {"type": "table", "source": "sdr_emails", "columns": ["lead_name", "subject", "status", "sent_at", "opened_at", "replied_at"]},
+        {"type": "stat_cards", "metrics": ["open_rate", "reply_rate", "bounce_rate"]}
+      ]
+    },
+    {
+      "name": "Activity",
+      "widgets": [
+        {"type": "timeline", "source": "audit_log", "filter": {"workflow": "ai-sdr"}}
+      ]
+    }
+  ]
+}
